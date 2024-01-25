@@ -25,10 +25,10 @@ public class CreditsModel {
     @Column(unique = false, nullable = false)
     private int code;
 
-    @Column(nullable = false, columnDefinition="VARCHAR (255)")
+    @Column(nullable = false)
     private LocalDate initialDate;
 
-    @Column(nullable = false, columnDefinition="VARCHAR (255)")
+    @Column(nullable = false)
     private LocalDate finishDate;
 
     @Column(nullable = false, columnDefinition="VARCHAR (255) DEFAULT  'ACTIVO' " )
@@ -44,7 +44,7 @@ public class CreditsModel {
     private double totalDebt;
 
   
-    @Column(nullable = false, columnDefinition = "DEFAULT FALSE")
+    @Column(columnDefinition = " BOOLEAN DEFAULT FALSE ", nullable = false)
     private Boolean Renovated;
 
     @Column(nullable = true, columnDefinition= "VARCHAR (255)")

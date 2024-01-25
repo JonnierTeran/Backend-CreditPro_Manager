@@ -22,7 +22,7 @@ public class PaymentsModel {
     @Column(nullable = false, columnDefinition = "DECIMAL (10,2)")
     private double countPayment;
 
-     @Column(nullable = false, columnDefinition="VARCHAR (255)")
+    @Column(nullable = false)
     private LocalDate datePayment;
 
     @ManyToOne

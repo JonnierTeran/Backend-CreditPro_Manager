@@ -43,6 +43,13 @@ public class CreditsModel {
     @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
     private double totalDebt;
 
+  
+    @Column(nullable = false, columnDefinition = "DEFAULT FALSE")
+    private Boolean Renovated;
+
+    @Column(nullable = true, columnDefinition= "VARCHAR (255)")
+    private String Observations;
+
     @ManyToOne
     @JoinColumn(nullable = false, unique=false)
     private AdministratorModel Id_Admin;
@@ -109,6 +116,24 @@ public class CreditsModel {
     public void setTotalDebt(double totalDebt) {
         this.totalDebt = totalDebt;
     }
+
+    public void setRenovated(Boolean Renovated) {
+        this.Renovated = Renovated;
+    }
+
+    public Boolean getRenovated() {
+        return this.Renovated;
+    }
+
+    public void setObservations( String Observations){
+            this.Observations = Observations;
+
+    }
+
+    public String getObservations(){
+        return this.Observations;
+
+}
 
     public AdministratorModel getId_Admin() {
         return this.Id_Admin;

@@ -1,5 +1,7 @@
 package com.backend.BackendSpringBootCreditpro.Models;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,6 +21,9 @@ public class PaymentsModel {
 
     @Column(nullable = false, columnDefinition = "DECIMAL (10,2)")
     private double countPayment;
+
+     @Column(nullable = false, columnDefinition="VARCHAR (255)")
+    private LocalDate datePayment;
 
     @ManyToOne
     @JoinColumn(nullable = false)
@@ -42,6 +47,14 @@ public class PaymentsModel {
 
     public void setCountPayment(double countPayment) {
         this.countPayment = countPayment;
+    }
+
+    public void setDatePayment(LocalDate datepayment){
+        this.datePayment = datepayment;
+    }
+
+    public LocalDate getDatePayment(){
+        return this.datePayment;
     }
 
     public CreditsModel getCode() {

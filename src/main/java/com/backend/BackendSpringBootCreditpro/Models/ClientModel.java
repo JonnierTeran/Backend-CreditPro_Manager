@@ -3,6 +3,8 @@ package com.backend.BackendSpringBootCreditpro.Models;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 /**
@@ -24,6 +26,10 @@ public class ClientModel {
 
     @Column( nullable = false, columnDefinition = "VARCHAR(250)") // Es unico  y no nullo
     private String lastName;
+
+    @ManyToOne
+    @JoinColumn(nullable = false, unique=false)
+    private AdministratorModel Id_Admin;
 
 
 
@@ -53,6 +59,14 @@ public class ClientModel {
         return this.lastName;
     }
 
+
+    public void setId_Admin(AdministratorModel id){
+        this.Id_Admin = id;
+    }
+
+    public AdministratorModel getId_Admin(){
+        return this.Id_Admin; 
+    }
     
     
 }

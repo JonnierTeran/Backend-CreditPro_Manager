@@ -47,8 +47,7 @@ public class CreditsModel {
     @Column(columnDefinition = " BOOLEAN DEFAULT FALSE ", nullable = false)
     private Boolean Renovated;
 
-    @Column(nullable = true, columnDefinition= "VARCHAR (255)")
-    private String Observations;
+
 
     @ManyToOne
     @JoinColumn(nullable = false, unique=false)
@@ -125,15 +124,6 @@ public class CreditsModel {
         return this.Renovated;
     }
 
-    public void setObservations( String Observations){
-            this.Observations = Observations;
-
-    }
-
-    public String getObservations(){
-        return this.Observations;
-
-}
 
     public AdministratorModel getId_Admin() {
         return this.Id_Admin;
@@ -150,6 +140,8 @@ public class CreditsModel {
     public void setId_Client(ClientModel id_Client) {
         this.Id_Client = id_Client;
     }
+
+    
 
     
 }

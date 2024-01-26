@@ -27,7 +27,7 @@ public class PaymentsModel {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private CreditsModel Code;
+    private CreditsModel CodeCredits;
 
     public PaymentsModel(){}
 
@@ -58,11 +58,11 @@ public class PaymentsModel {
     }
 
     public CreditsModel getCode() {
-        return this.Code;
+        return this.CodeCredits;
     }
 
     public void setCode(CreditsModel Code) {
-        this.Code = Code;
+        this.CodeCredits = Code;
     }
     
 }

@@ -20,21 +20,21 @@ public class CreditsModel {
 
     //Propiedades de la entidad / clase
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = false, nullable = false)
+    @Id //ID Primary Key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Auto Incrementable y unico 
+    @Column(unique = false, nullable = false)   // Unico y No null
     private int code;
 
-    @Column(nullable = false)
+    @Column(nullable = false) // No null 
     private LocalDate initialDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false) // no Null
     private LocalDate finishDate;
 
-    @Column(nullable = false, columnDefinition="VARCHAR (255) DEFAULT  'ACTIVO' " )
+    @Column(nullable = false, columnDefinition="VARCHAR (255) DEFAULT  'ACTIVO' " )  // no nullo, y tiene 255 de max long
     private String status;
     
-    @Column(nullable = false, columnDefinition = "FLOAT")
+    @Column(nullable = false) //  no nullo
     private int interest;
 
     @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
@@ -49,12 +49,12 @@ public class CreditsModel {
 
 
 
-    @ManyToOne
-    @JoinColumn(nullable = false, unique=false)
+    @ManyToOne  //Relacion de 1 a muchos con Admin, 1 admin registra muchos Creditos
+    @JoinColumn(nullable = false, unique=false) //Null y no es unico
     private AdministratorModel Id_Admin;
 
-    @ManyToOne
-    @JoinColumn(nullable = false, unique=false)
+    @ManyToOne //Relacion de 1 a muchos con Admin, 1 admin registra muchos Creditos
+    @JoinColumn(nullable = false, unique=false) //Null y no es unico
     private ClientModel Id_Client;
     
 

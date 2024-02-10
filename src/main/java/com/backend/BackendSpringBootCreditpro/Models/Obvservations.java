@@ -27,11 +27,11 @@ public class Obvservations {
     @Column(nullable = false,  columnDefinition = "VARCHAR(250)" )  // Es unico  y no nullo, y tiene 255 de max long
     private String description;
 
-    @Column(nullable = false)
+    @Column(nullable = false) //No null
     private LocalDate toDate;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
+    @ManyToOne //Relacion de 1 a muchos con Credits, un credito tiene muchas obvervaciones
+    @JoinColumn(nullable = false) //Null 
     private CreditsModel CodeCredits;
 
     public Obvservations(){}

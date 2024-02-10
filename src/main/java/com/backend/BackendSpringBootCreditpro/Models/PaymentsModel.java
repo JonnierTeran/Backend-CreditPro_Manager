@@ -11,22 +11,24 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+
+//entidad de bd
 @Entity
 @Table(name= "Payments")
 public class PaymentsModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //Primary  key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Autoincrement
     private int Reference;
 
-    @Column(nullable = false, columnDefinition = "DECIMAL (10,2)")
+    @Column(nullable = false, columnDefinition = "DECIMAL (10,2)") //No null y tipado
     private double countPayment;
 
-    @Column(nullable = false)
+    @Column(nullable = false) //No null
     private LocalDate datePayment;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
+    @ManyToOne//Relacion de 1 a muchos con Credits, 1 Credito registra muchos Pagos
+    @JoinColumn(nullable = false) //No null
     private CreditsModel CodeCredits;
 
     public PaymentsModel(){}

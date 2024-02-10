@@ -21,14 +21,15 @@ public class ClientModel {
     @Column(unique = true, nullable = false) // Es unico  y no nullo
     private int Id;
 
-    @Column(nullable = false,  columnDefinition = "VARCHAR(250)" )  // Es unico  y no nullo, y tiene 255 de max long
+    @Column(nullable = false,  columnDefinition = "VARCHAR(250)" )  //  no nullo, y tiene 255 de max long
     private String name;
 
-    @Column( nullable = false, columnDefinition = "VARCHAR(250)") // Es unico  y no nullo
+    @Column( nullable = false, columnDefinition = "VARCHAR(250)") //   no nullo, y tiene 255 de max long
     private String lastName;
 
-    @ManyToOne
-    @JoinColumn(nullable = false, unique=false)
+    
+    @ManyToOne // Relacion de Uno a Muchos 1 Admin tiene muchos clientes
+    @JoinColumn(nullable = false, unique=false) //  no nullo, no es unico el identificador y tiene 255 de max long
     private AdministratorModel Id_Admin;
 
 

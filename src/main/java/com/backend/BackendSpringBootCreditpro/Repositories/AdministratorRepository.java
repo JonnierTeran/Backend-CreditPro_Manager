@@ -1,4 +1,4 @@
-package Repositories;
+package com.backend.BackendSpringBootCreditpro.Repositories;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -21,5 +21,7 @@ public interface  AdministratorRepository  extends JpaRepository<AdministratorMo
      /**
       * Actualizar Un Admin
       */
+
+      
 
 }

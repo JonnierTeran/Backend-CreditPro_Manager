@@ -1,6 +1,6 @@
 # Backend-CreditPro_Manager
 
-# TODO List App
+# CREDITPRO MANAGER
 - Una aplicación de tipo BACKEND para una web todo-list que permite a los usuarios  generar, crear, actualizar, administrar y eliminar tareas y cuentas de acceso.
 
 ### Requisitos

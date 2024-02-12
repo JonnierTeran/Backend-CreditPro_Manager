@@ -13,15 +13,6 @@ import com.backend.BackendSpringBootCreditpro.Models.AdministratorModel;
 @Repository
 public interface  AdministratorRepository  extends JpaRepository<AdministratorModel, Integer> {
 
-    /*
-     * Registrar un Admin
-     */
-
-
-     /**
-      * Actualizar Un Admin
-      */
-
       
 
 }

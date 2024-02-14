@@ -18,7 +18,7 @@ public class AdministratorModel {
 
     @Id // Indicamos que es un id  primary key
     @Column(unique = true, nullable = false) // Es unico  y no nullo
-    private int Id;
+    private Long identificacion;
 
     @Column(nullable = false,  columnDefinition = "VARCHAR(250)" )  // Es unico  y no nullo, y tiene 255 de max long
     private String name;
@@ -35,12 +35,12 @@ public class AdministratorModel {
 
     public AdministratorModel(){}
 
-    public void setId(int id){
-        this.Id=id;
+    public void setIdentificacion(Long identificacion){
+        this.identificacion=identificacion;
     }
 
-    public int getId(){
-        return this.Id;
+    public Long getIdentificacion(){
+        return this.identificacion; 
     }
 
     public void setName(String name){

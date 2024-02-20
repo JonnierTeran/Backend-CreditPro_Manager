@@ -80,4 +80,30 @@ public class AdministratorService {
         }
     }
 
+
+    /**
+     * @Descripcion Metodo para buscar por identificacion un admin si es que existe.
+     * @param Identificacion
+     * @return Informacion del Abministrador con esa identificacion.
+     */
+    public AdministratorModel GetAdministratorIdentificacion(Long Identificacion){
+          // Metodo para validar si el paramertro tiene caracteres validos
+          if (Identificacion > 0) {
+
+            // Tipo Optional porque puede o no existir un admin con esa identificacion
+            Optional<AdministratorModel> Administrator = this._AdministratorRepository.findByIdentificacion(Identificacion);
+
+            // Verificar sy hay algo presente en el objeto opcional
+            if (Administrator.isPresent()) {
+
+                return Administrator.get();
+
+            } else {
+
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
 }

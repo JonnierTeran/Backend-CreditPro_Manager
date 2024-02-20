@@ -100,4 +100,33 @@ public class AdministratorController {
 
     }
 
+    /**
+     * Metodo de escucha para la ruta getAdmin/UserByID
+     * 
+     * @param user
+     * @return Objeto AdmisnitratorModel Si existe en la bd
+     */
+    @GetMapping(path = "UserByID/{identificacion}")
+    public ResponseEntity<AdministratorModel> getAdministratorController(@PathVariable Long identificacion) {
+
+        // Validacion que la cadena no sea null
+        if (identificacion > 0) {
+
+            // Se valida que la respuesta no sea null y se retorna el objeto sino retoruna
+            // null
+            if (this._AdministratorService.GetAdministratorIdentificacion(identificacion) != null) {
+
+                // Retorna 200 ststus OK si  se encuentra el administrador con ese id
+                return ResponseEntity.ok()
+                        .body(this._AdministratorService.GetAdministratorIdentificacion(identificacion));
+            } else {
+
+                return ResponseEntity.notFound().build(); // Retorna 404 Not Found si no se encuentra el administrador
+            }
+
+        } else {
+            return ResponseEntity.badRequest().body(null); // Retorna 400 bad request si el parametro user es invalido
+        }
+
+    }
 }

@@ -23,4 +23,11 @@ public interface  AdministratorRepository  extends JpaRepository<AdministratorMo
      */
     public abstract Optional<AdministratorModel> findByUser(String user);
 
+     /**
+     * @Descripcion nomenclatura de JPA para hacer consultas automaticas findBy filtrar por. 
+     * @Abstract Es abstracto porque no contiene un cuerpo.
+     * @param user
+     * @return Consulta SQL con JPA que Obtiene el Administrador filtrado por su ID
+     */
+    public abstract Optional<AdministratorModel> findByIdentificacion(Long identificacion);
 }

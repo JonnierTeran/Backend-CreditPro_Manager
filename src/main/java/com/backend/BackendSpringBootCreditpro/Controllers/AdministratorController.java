@@ -79,7 +79,7 @@ public class AdministratorController {
      * @return Objeto AdmisnitratorModel Si existe en la bd
      */
     @GetMapping(path = "getAdmin/{user}")
-    public ResponseEntity<AdministratorModel> getAdministratorController(@PathVariable String user) {
+    public ResponseEntity<AdministratorModel> getAdministratorByUserController(@PathVariable String user) {
 
         // Validacion que la cadena no sea null
         if (!user.isEmpty()) {
@@ -107,7 +107,7 @@ public class AdministratorController {
      * @return Objeto AdmisnitratorModel Si existe en la bd
      */
     @GetMapping(path = "UserByID/{identificacion}")
-    public ResponseEntity<AdministratorModel> getAdministratorController(@PathVariable Long identificacion) {
+    public ResponseEntity<AdministratorModel> getAdministratorByIdController(@PathVariable Long identificacion) {
 
         // Validacion que la cadena no sea null
         if (identificacion > 0) {

@@ -28,7 +28,7 @@ public class AdministratorService {
      */
     public Response SaveAdministrator(AdministratorModel Admin) {
 
-        //Validacion que todas las propiedades del objeto sean diligenciadas
+        // Validacion que todas las propiedades del objeto sean diligenciadas
         if (Admin.getIdentificacion() > 0 && !Admin.getName().isEmpty() && !Admin.getLastName().isEmpty()
                 && !Admin.getUser().isEmpty() && !Admin.getPassword().isEmpty()) {
 

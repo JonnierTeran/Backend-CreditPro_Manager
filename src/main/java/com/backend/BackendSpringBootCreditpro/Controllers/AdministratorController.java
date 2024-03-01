@@ -21,6 +21,9 @@ public class AdministratorController {
     @Autowired
     AdministratorService _AdministratorService;
 
+
+    //#region Endpoint para Registrar un Admin
+
     /**
      * REGISTRAR UN ADMINISTRADOR
      * 
@@ -44,6 +47,8 @@ public class AdministratorController {
                                              // ingreso bien el cuerpo de la peticion
         }
     }
+
+    //#endregion
 
     /*
      * @GetMapping(path = "getAdmin/{user}")
@@ -72,6 +77,9 @@ public class AdministratorController {
      * }
      */
 
+
+     //#region Enpoint para buscar un admin por su User
+
     /**
      * Metodo de escucha para la ruta getAdmin/USER
      * 
@@ -99,6 +107,12 @@ public class AdministratorController {
         }
 
     }
+
+
+    //#endregion
+
+
+    //#region Endpoint para buscar un admin por Id
 
     /**
      * Metodo de escucha para la ruta getAdmin/UserByID
@@ -129,4 +143,30 @@ public class AdministratorController {
         }
 
     }
+
+    //#endregion
+
+
+    //#region Endpoint para recuperar una cuenta por user
+
+    /**
+     * @description Endpoint para envio de credenciales por correo
+     * @param User
+     * @return Response con la informacion del envio de correo
+     */
+    @GetMapping(path = "RecoverAccount/{User}")
+    public ResponseEntity<Response> RecoverAccountController(@PathVariable String User) {
+
+        if (!User.isEmpty()) {
+            // Retorna 200 status OK si  se envia correctamente el correo
+            return ResponseEntity.ok()
+            .body(this._AdministratorService.RestoreAccount(User));        
+        }else{
+            // Retorna 200 ststus OK si  se encuentra el administrador con ese id
+            return ResponseEntity.badRequest()
+            .body(new Response("Ingrese correctamente el Email"));
+        }
+    
+    }
+    //#endregion
 }

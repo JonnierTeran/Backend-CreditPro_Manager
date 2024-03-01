@@ -63,6 +63,13 @@
 		</dependency>
 
 
+		<!--Resend Emails-->
+		<dependency>
+			<groupId>com.resend</groupId>
+			<artifactId>resend-java</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+
 
 	</dependencies>
 

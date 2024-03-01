@@ -139,6 +139,9 @@ public class AdministratorService {
 
     // #endregion
 
+
+    //#region Restaurar cuenta por email
+
     /**
      * @Descripcion Metodo para recuperar una cuenta basado en un usuario registrado
      * @param User
@@ -151,7 +154,7 @@ public class AdministratorService {
         if (Admin != null) {
 
             //Envio del correo utilizando la API DE RESEND MAILS
-            
+
             Resend resend = new Resend("re_H9KAveXF_PiYg3yJMxVwZJ3zWZkae9kcz");
 
             SendEmailRequest sendEmailRequest = SendEmailRequest.builder()
@@ -179,4 +182,7 @@ public class AdministratorService {
         }
 
     }
+
+    //#endregion
+
 }

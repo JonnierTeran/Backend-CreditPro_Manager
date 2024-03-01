@@ -163,11 +163,11 @@ public class AdministratorService {
                     .subject("SOPORTE TECNICO CEDITPRO MANAGER - RECUPERACIÓN DE CUENTA")
                     .html("<strong>Cordial saludo. <br> </strong> <br> Querido usuario  <strong>" + Admin.getName() + " "
                             + Admin.getLastName()
-                            + ", </strong> el equipo de soporte tecnico se permite enviar a usted luego de solicitar el restablecimiento de su contraseña para ingresar al sofware <strong> CREDITPRO-MANAGER </strong> su password de acceso, se recomienda de forma obligatoria realizar un cambio de contraseña al ingresar al aplicativo web de forma urgente para garantizar seguridad y calidad en el mantenimiento de la información, recuerde que el email de acceso es el mismo de la cuenta en la que recibe este email.  <br>  Contraseña de Acceso: "
+                            + ", </strong> el equipo de soporte tecnico se permite enviar a usted luego de solicitar el restablecimiento de su contraseña para ingresar al sofware <strong> CREDITPRO-MANAGER </strong> su password de acceso, se recomienda de forma obligatoria realizar un cambio de contraseña al ingresar al aplicativo web de forma urgente para garantizar seguridad y calidad en el mantenimiento de la información, recuerde que el email de acceso es el mismo de la cuenta en la que recibe este email.  <br> <br>  Contraseña de Acceso: "
                             + Admin.getPassword()
                             + " <br> <br>  Gracias por utilizar nuestros serviciós. <br> <hr> <strong> CREDITPRO-MANAGER </strong> <br> Si necestia soporte tecnico comunicarse al correo: <strong> jonnierteranmorales@gmail.com </strong>")
                     .build();
-
+                    
             try {
                 SendEmailResponse data = resend.emails().send(sendEmailRequest);
                 System.out.println(data.getId());

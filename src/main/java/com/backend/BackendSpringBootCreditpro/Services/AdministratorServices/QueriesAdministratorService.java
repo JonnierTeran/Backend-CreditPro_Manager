@@ -9,7 +9,7 @@ import com.backend.BackendSpringBootCreditpro.Models.AdministratorModel;
 import com.backend.BackendSpringBootCreditpro.Repositories.AdministratorRepository;
 
 /**
- * @Notacion Service Beans
+ * @Notacion Service Service
  */
 @Service
 public class QueriesAdministratorService {

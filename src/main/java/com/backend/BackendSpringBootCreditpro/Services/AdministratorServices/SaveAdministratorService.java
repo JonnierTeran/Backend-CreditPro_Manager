@@ -31,7 +31,8 @@ public class SaveAdministratorService {
     public Response SaveAdministrator(AdministratorModel Admin) {
 
         // Validacion que todas las propiedades del objeto sean diligenciadas
-        if (Admin.getIdentificacion() != null && Admin.getIdentificacion() > 0 && !Admin.getName().isEmpty() && !Admin.getLastName().isEmpty()
+        if (Admin.getIdentificacion() != null && Admin.getIdentificacion() > 0 && !Admin.getName().isEmpty()
+                && !Admin.getLastName().isEmpty()
                 && !Admin.getUser().isEmpty() && !Admin.getPassword().isEmpty()) {
 
             // Validacion de que no exista un administador con el mismo id que se intenta

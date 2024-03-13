@@ -57,12 +57,12 @@ public class SaveAdministratorService {
                 }
                 // En caso que si exista un admin con el mismo user que se quiere regustrar
                 else {
-                    return new Response("Ya Existe un Administrador Asociado al usuario " + Admin.getUser());
+                    return new Response("Error al registrar, Ya Existe un Administrador Asociado al usuario " + Admin.getUser());
                 }
 
             } else {
                 return new Response(
-                        "Ya Existe un Administrador Asociado a la identificación:  " + Admin.getIdentificacion());
+                        "Error al registrar, Ya Existe un Administrador Asociado a la identificación:  " + Admin.getIdentificacion());
             }
 
             // si el Objeto que llega por parametro es null

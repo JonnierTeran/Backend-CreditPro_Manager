@@ -48,6 +48,9 @@ public class CreditsModel {
     private Boolean Renovated;
 
 
+    @Column(nullable = false, columnDefinition="VARCHAR (255)" )  // no nullo, y tiene 255 de max long
+    private String typeCredit;
+
 
     @ManyToOne  //Relacion de 1 a muchos con Admin, 1 admin registra muchos Creditos
     @JoinColumn(nullable = false, unique=false) //Null y no es unico
@@ -124,6 +127,13 @@ public class CreditsModel {
         return this.Renovated;
     }
 
+    public String getTypeCredit(){
+        return this.typeCredit;
+    }
+
+    public void setTypeCredit(String typeCredit){
+        this.typeCredit = typeCredit;
+    }
 
     public AdministratorModel getId_Admin() {
         return this.Id_Admin;
